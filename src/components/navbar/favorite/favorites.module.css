@@ -1,0 +1,24 @@
+.container {
+    display: grid;
+    grid-template-rows: 60px 60px;
+}
+
+.friendsHead {
+    font-size: 40px;
+    color: gold;
+}
+
+.friendsItems {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.friendsItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.friendsItem img {
+    width: 50px;
+}

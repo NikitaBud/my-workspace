@@ -1,0 +1,15 @@
+.item {
+    display: grid;
+    width: auto;
+    padding: 15px 10px;
+    grid-template-columns: 100px 150px 10px;
+}
+.item img {
+    width: 70px;
+    height: auto;
+    border-radius: 35px;
+}
+
+.likeItem img {
+    width: 32px;
+}
