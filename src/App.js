@@ -13,7 +13,6 @@ import './App.css';
 
 
 const App = (props) => {
-    console.log(props);
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -22,15 +21,15 @@ const App = (props) => {
                 <div className="app-wrapper-content">
                     <Route path='/dialogs'
                            render={ () => (
-                             <Dialogs
-                                 state={props.state.dialogsPage} />
-                           )} />
+                               <Dialogs
+                                   state={props.state.dialogsPage}
+                                   dispatch={props.dispatch} />
+                           )}/>
                     <Route path='/profile'
                            render={ () => (
                              <Profile
                                  state={props.state.profilePage}
-                                 addPost={props.addPost}
-                                 updateNewPostText={props.updateNewPostText}
+                                 dispatch={props.dispatch}
                              />
                            )}/>
                     <Route path='/news' component={News}/>

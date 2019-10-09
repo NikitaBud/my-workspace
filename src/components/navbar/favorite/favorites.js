@@ -12,15 +12,15 @@ const Favorites = () => {
             </div>
             <div className={s.friendsItems}>
                 <div className={s.friendsItem}>
-                    <img src={avaMaria} />
+                    <img src={avaMaria} alt="Maria" />
                     <p>Maria</p>
                 </div>
                 <div className={s.friendsItem}>
-                    <img src={avaRoman} />
+                    <img src={avaRoman} alt="Roman" />
                     <p>Roman</p>
                 </div>
                 <div className={s.friendsItem}>
-                    <img src={avaJohn} />
+                    <img src={avaJohn} alt="John" />
                     <p>John</p>
                 </div>
             </div>
