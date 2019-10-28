@@ -1,0 +1,58 @@
+.container {
+    display: grid;
+    margin: 25px 25px;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 100px 8fr;
+    margin-bottom: 25px;
+}
+
+.avaItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px;
+    border: 1px solid #8a8c9d;
+    border-radius: 15px;
+    background-color: #9d5d86;
+}
+.avaItem button {
+    background-color: #539d51;
+    width: auto;
+    border: none;
+}
+
+.userInfo {
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+    border: 1px solid #9d2e89;
+    border-radius: 15px;
+    background-color: #7d7c9d;
+}
+.nameUndStatus {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 15px;
+}
+
+.nameUndStatus p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.location {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-right: 10px;
+}
+
+.location p {
+    margin: 0;
+}
