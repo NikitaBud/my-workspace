@@ -1,14 +1,14 @@
 let FOLLOW = 'FOLLOW';
 let UNFOLLOW = 'UNFOLLOW';
 let SET_USERS = 'SET_USERS';
+let SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+let SET_TOTAL_USER_COUNT = 'SET_TOTAL_USER_COUNT';
 
 let initialState = {
-    users: [
-        {id: 1, followed: true, name: 'Maria', textStatus: 'i happy', location: {country: 'Germany', city: 'Kassel'} },
-        {id: 2, followed: false, name: 'Roman', textStatus: 'I am a tracker', location: {country: 'Russia', city: 'N-Chelny'} },
-        {id: 3, followed: true, name: 'Dima', textStatus: 'working', location: {country: 'Russia', city: 'Kazan'} },
-        {id: 4, followed: false, name: 'John', textStatus: 'I like bike', location: {country: 'Germany', city: 'Kassel'} }
-    ]
+    users: [],
+    pageSize: 5,
+    totalUsersCount: 0,
+    currentPage: 1
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -36,7 +36,17 @@ const usersReducer = (state = initialState, action) => {
         case SET_USERS:
             return {
                 ...state,
-                users: [ ...state.users, ...action.users ]
+                users: action.users
+            };
+        case SET_CURRENT_PAGE:
+            return {
+                ...state,
+                currentPage: action.currentPage
+            };
+        case SET_TOTAL_USER_COUNT:
+            return {
+                ...state,
+                totalUsersCount: action.count
             }
         default:
             return  state;
@@ -45,6 +55,8 @@ const usersReducer = (state = initialState, action) => {
 
 export const followActionCreator = (userId) => ({type: FOLLOW, userId});
 export const unfollowActionCreator = (userId) => ({type: UNFOLLOW, userId});
-export const setUsersActionCreator = (userId) => ({type: SET_USERS, userId});
+export const setUsersActionCreator = (users) => ({type: SET_USERS, users});
+export const setCurrentPageActionCreater = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage });
+export const setTotalUsersCountActionCreater = (totalUsersCount) => ({type: SET_TOTAL_USER_COUNT, count: totalUsersCount});
 
 export default usersReducer;

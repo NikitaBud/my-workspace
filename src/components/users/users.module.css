@@ -56,3 +56,7 @@
 .location p {
     margin: 0;
 }
+
+.selectedPage {
+    font-weight: bold;
+}
