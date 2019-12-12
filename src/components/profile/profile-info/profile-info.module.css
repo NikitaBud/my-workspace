@@ -1,0 +1,15 @@
+.descriptionBlock {
+    padding: 10px;
+}
+.descriptionBlock .ava {
+    width: 200px;
+    padding: 25px;
+}
+.item img {
+    height: 400px;
+ }
+
+.searchWork {
+    display: flex;
+    align-items: center;
+}

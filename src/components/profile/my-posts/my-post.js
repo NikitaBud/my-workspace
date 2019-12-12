@@ -16,7 +16,6 @@ const MyPost = (props) => {
         let text = event.target.value;
         props.updateNewPostText(text);
     };
-
     return (
         <div className={s.postsBlock}>
             <h3>My posts</h3>

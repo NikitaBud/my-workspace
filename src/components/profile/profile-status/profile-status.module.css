@@ -1,0 +1,9 @@
+.statusBlock {
+    width: min-content;
+    background: navajowhite;
+    border: 1px solid cornflowerblue;
+}
+
+.editLogo {
+    width: 35px;
+}
