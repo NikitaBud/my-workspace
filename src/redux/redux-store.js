@@ -12,7 +12,10 @@ let reducers = combineReducers({
     usersPage: usersReducer,
     auth: authReducer,
     form: formReducer
-})
+});
+
 let store = createStore(reducers, applyMiddleware(ThunkMiddleware));
+
+window.store = store;
 
 export default store;
