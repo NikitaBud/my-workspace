@@ -7,7 +7,7 @@ import {
     setCurrentPage,
     getUsers
 } from "../../redux/users-reducer";
-import Spinner from '../pre-loader/spinner';
+import Spinner from '../../utilities/loader/spinner';
 
 class UsersContainer extends React.Component {
 

@@ -4,7 +4,7 @@ import dw from './darth-vader.svg'
 import on from '../profile-info/on.svg';
 import off from '../profile-info/off.svg'
 import s from './profile-info.module.css';
-import Spinner from "../../pre-loader/spinner";
+import Spinner from "../../../utilities/loader/spinner";
 import ProfileStatus from "../profile-status/profile-status";
 import Profile from "../profile";
 
