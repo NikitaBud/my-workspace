@@ -5,9 +5,16 @@ import {
     getFollow,
     getUnFollow,
     setCurrentPage,
-    getUsers
+    requestUsers
 } from "../../redux/users-reducer";
-import Spinner from '../../utilities/loader/spinner';
+import {
+    getCurrentPage,
+    getFollowingInProgress,
+    getIsFetching,
+    getPageSize,
+    getTotalUsersCount, getUsers
+} from "../../redux/users-selector";
+import Spinner from "../../utilities/loader/spinner";
 
 class UsersContainer extends React.Component {
 
@@ -34,7 +41,7 @@ class UsersContainer extends React.Component {
     }
 }
 
-let mapStateToProps = (state) => {
+/* let mapStateToProps = (state) => {
     return {
         users: state.usersPage.users,
         pageSize: state.usersPage.pageSize,
@@ -43,10 +50,22 @@ let mapStateToProps = (state) => {
         isFetching: state.usersPage.isFetching,
         followingInProgress: state.usersPage.followingInProgress
     }
+} */
+
+let mapStateToProps = (state) => {
+    return {
+        users: getUsers(state),
+        pageSize: getPageSize(state),
+        totalUsersCount: getTotalUsersCount(state),
+        currentPage: getCurrentPage(state),
+        isFetching: getIsFetching(state),
+        followingInProgress: getFollowingInProgress(state)
+    }
 }
+
 export default connect(mapStateToProps, {
     getFollow,
     getUnFollow,
     setCurrentPage,
-    getUsers
+    getUsers: requestUsers
 })(UsersContainer);
