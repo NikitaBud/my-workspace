@@ -2,6 +2,7 @@ import React from 'react';
 import {Field, reduxForm} from "redux-form";
 import {Input} from "../../../utilities/form-controls/form-controls";
 import {required} from "../../../utilities/validator/validator";
+import styles from './login-form.module.css';
 
 const LoginForm = (props) => {
     return (
@@ -10,7 +11,7 @@ const LoginForm = (props) => {
                 component={Input}
                 validate={[required]}
                 name={'email'}
-                placeholder='Email' />
+                placeholder='Email'/>
             <Field
                 component={Input}
                 validate={[required]}
@@ -21,11 +22,12 @@ const LoginForm = (props) => {
                 component={Input}
                 name={'rememberMe'}
                 type='checkbox'/>Remember me<br/>
+            {props.error && <span className={styles.formSummeryError}>{props.error}</span>}
             <button>Login</button>
         </form>
     )
 }
 
-const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm);
+const LoginReduxForm = reduxForm({form: 'login'})(LoginForm);
 
 export default LoginReduxForm;
